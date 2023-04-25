@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, Navigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const DeleteUser = async (id) => {
   await axios.delete(`http://localhost:8090/user/${id}`);

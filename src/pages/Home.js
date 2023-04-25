@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Table from "./Table";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
-
-const Home=()=> {
+const Home = () => {
   const [users, setUsers] = useState("");
 
-  const {id}=useParams();
+  // const { id } = useParams();
 
   useEffect(() => {
     loadUsers();
@@ -16,18 +15,13 @@ const Home=()=> {
     //   {    setUsers(res.data.map((e)=><Table>{e}</Table>))
     // }
     // )
-
   }, []);
 
   const loadUsers = async () => {
     const result = await axios.get("http://localhost:8090/users");
-    setUsers(result.data.map((e)=><Table>{e}</Table>));
-    console.log(result);
-    
-
+    setUsers(result.data.map((e) => <Table>{e}</Table>));
+    // console.log(result);
   };
-
-  
 
   return (
     <div className="container">
@@ -59,7 +53,5 @@ const Home=()=> {
       </div>
     </div>
   );
-}
+};
 export default Home;
-
-
