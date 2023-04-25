@@ -4,7 +4,7 @@ import Table from "./Table";
 import { useParams } from "react-router-dom";
 
 
-export default function Home() {
+const Home=()=> {
   const [users, setUsers] = useState("");
 
   const {id}=useParams();
@@ -60,5 +60,6 @@ export default function Home() {
     </div>
   );
 }
+export default Home;
 
 
